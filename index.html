@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNES Retro Play</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div id="cursor"></div>
+<div id="toast"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-stars"></div>
+  <div class="logo-wrap">
+    <span class="logo-tag">🎮 SNES RETRO PLAY</span>
+    <span class="logo-sub">
+      <span class="power-led"></span>
+      Super Nintendo &nbsp;•&nbsp; Online Emulator &nbsp;•&nbsp; 1990–2026
+    </span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="active" data-filter="all">ALL GAMES</a>
+  <a href="#" data-filter="plataforma">MARIO</a>
+  <a href="#" data-filter="aventura">ZELDA</a>
+  <a href="#" data-filter="acao">ACTION</a>
+  <a href="#" data-filter="rpg">RPG</a>
+  <a href="#" data-filter="luta">FIGHTING</a>
+  <a href="#" data-filter="corrida">RACING</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <h2>▶ REVIVA OS CLÁSSICOS DO SUPER NINTENDO</h2>
+    <span class="hero-badge">★ MAIS DE 700 JOGOS DISPONÍVEIS ★</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num" data-count="746">0</span>
+    <span class="stat-label">Jogos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num" data-count="1990">0</span>
+    <span class="stat-label">Lançamento</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num" data-count="49">0</span>
+    <span class="stat-label">Milhões Vendidos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num" data-count="16">0</span>
+    <span class="stat-label">Bits de Poder</span>
+  </div>
+</div>
+
+<!-- GAMES -->
+<main class="container">
+  <h2 class="section-title">JOGOS NOTÁVEIS</h2>
+  <div class="games" id="gameGrid">
+
+    <div class="card" data-genre="plataforma" data-game="super-mario-world">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Super_Mario_World_Coverart.png" alt="Super Mario World" loading="lazy">
+        <span class="card-badge">CLÁSSICO</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('super-mario-world')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Super Mario World</h3>
+        <div class="meta-row">
+          <span class="tag">PLATAFORMA</span><span class="tag">1991</span><span class="tag">★ 10/10</span>
+        </div>
+        <p>Explore Dinosaur Land ao lado de Mario e Yoshi em uma das maiores aventuras de plataforma da história.</p>
+        <button class="play-btn" onclick="loadGame('super-mario-world')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="aventura" data-game="zelda-lttp">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/The_Legend_of_Zelda_A_Link_to_the_Past_SNES_Game_Cover.jpg" alt="Zelda" loading="lazy">
+        <span class="card-badge">ÉPICO</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('zelda-lttp')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Zelda: A Link to the Past</h3>
+        <div class="meta-row">
+          <span class="tag">AVENTURA</span><span class="tag">1992</span><span class="tag">★ 10/10</span>
+        </div>
+        <p>Uma das maiores aventuras da história dos videogames. Explore dois mundos e derrote Ganon.</p>
+        <button class="play-btn" onclick="loadGame('zelda-lttp')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="acao" data-game="donkey-kong-country">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Donkey_Kong_Country.jpg" alt="Donkey Kong Country" loading="lazy">
+        <span class="card-badge">LENDÁRIO</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('donkey-kong-country')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Donkey Kong Country</h3>
+        <div class="meta-row">
+          <span class="tag">AÇÃO</span><span class="tag">1994</span><span class="tag">★ 9/10</span>
+        </div>
+        <p>Gráficos pré-renderizados revolucionários e gameplay viciante. Uma aventura épica com DK e Diddy.</p>
+        <button class="play-btn" onclick="loadGame('donkey-kong-country')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="rpg" data-game="chrono-trigger">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/49/Chrono_Trigger.jpg" alt="Chrono Trigger" loading="lazy">
+        <span class="card-badge">OBRA-PRIMA</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('chrono-trigger')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Chrono Trigger</h3>
+        <div class="meta-row">
+          <span class="tag">RPG</span><span class="tag">1995</span><span class="tag">★ 10/10</span>
+        </div>
+        <p>RPG lendário com viagens no tempo, combate único e múltiplos finais. O melhor RPG de todos os tempos.</p>
+        <button class="play-btn" onclick="loadGame('chrono-trigger')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="acao" data-game="super-metroid">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Super_Metroid_box_art.png" alt="Super Metroid" loading="lazy">
+        <span class="card-badge">CULT</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('super-metroid')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Super Metroid</h3>
+        <div class="meta-row">
+          <span class="tag">AÇÃO</span><span class="tag">1994</span><span class="tag">★ 9/10</span>
+        </div>
+        <p>Atmosfera única no planeta Zebes. Criou o gênero Metroidvania e é reverenciado até hoje.</p>
+        <button class="play-btn" onclick="loadGame('super-metroid')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="luta" data-game="street-fighter-ii">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Street_Fighter_II_%27Turbo_-_Hyper_Fighting_%28flyer%29.png" alt="Street Fighter II Turbo" loading="lazy">
+        <span class="card-badge">VERSUS</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('street-fighter-ii')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Street Fighter II Turbo</h3>
+        <div class="meta-row">
+          <span class="tag">LUTA</span><span class="tag">1993</span><span class="tag">★ 9/10</span>
+        </div>
+        <p>O rei dos jogos de luta. Hadouken! Escolha seu lutador e enfrente os melhores do mundo.</p>
+        <button class="play-btn" onclick="loadGame('street-fighter-ii')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="rpg" data-game="final-fantasy-vi">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Ffvi.jpg" alt="Final Fantasy VI" loading="lazy">
+        <span class="card-badge">ÉPICO</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('final-fantasy-vi')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Final Fantasy VI</h3>
+        <div class="meta-row">
+          <span class="tag">RPG</span><span class="tag">1994</span><span class="tag">★ 10/10</span>
+        </div>
+        <p>Uma das histórias mais ricas dos RPGs. Elenco memorável, vilão icônico e trilha sonora incomparável.</p>
+        <button class="play-btn" onclick="loadGame('final-fantasy-vi')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+    <div class="card" data-genre="corrida" data-game="super-mario-kart">
+      <div class="card-img-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Sma_box.jpg" alt="Super Mario Kart" loading="lazy">
+        <span class="card-badge">MULTI</span>
+        <div class="card-overlay">
+          <button class="play-btn" onclick="loadGame('super-mario-kart')"><span class="btn-icon">▶</span> JOGAR AGORA</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Super Mario Kart</h3>
+        <div class="meta-row">
+          <span class="tag">CORRIDA</span><span class="tag">1992</span><span class="tag">★ 9/10</span>
+        </div>
+        <p>O clássico que criou o gênero kart racing. Casca de banana no caminho e muito divertimento!</p>
+        <button class="play-btn" onclick="loadGame('super-mario-kart')"><span class="btn-icon">▶</span> JOGAR</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- EMULATOR -->
+<section class="emulator-section" id="emulatorSection">
+  <div class="emu-wrap">
+
+    <div class="emu-header">
+      <div class="now-playing" id="nowPlaying">
+        <span class="dot"></span>
+        <span id="nowPlayingText">SELECIONE UM JOGO</span>
+      </div>
+      <div class="emu-controls">
+        <button class="emu-btn" onclick="toggleFullscreen()">⛶ TELA CHEIA</button>
+        <button class="emu-btn" onclick="scrollToGames()">⬆ VER JOGOS</button>
+      </div>
+    </div>
+
+    <div class="emu-frame-wrap" id="emuWrap">
+      <div class="pixel-deco tl"></div>
+      <div class="pixel-deco tr"></div>
+      <div class="pixel-deco bl"></div>
+      <div class="pixel-deco br"></div>
+
+      <div class="emu-placeholder" id="emuPlaceholder">
+        <div class="ph-icon">🕹️</div>
+        <div class="ph-text">
+          CLIQUE EM "JOGAR" EM QUALQUER<br>
+          CARD ACIMA PARA INICIAR<br><br>
+          <span class="ph-blink">▶ PRONTO PARA JOGAR</span>
+        </div>
+      </div>
+
+      <div id="emuContainer" style="display:none; width:100%; height:600px; border-radius:16px;"></div>
+    </div>
+
+    <div class="controls-guide">
+      <div class="ctrl-item"><span class="ctrl-key">← → ↑ ↓</span><span class="ctrl-action">Mover / D-Pad</span></div>
+      <div class="ctrl-item"><span class="ctrl-key">Z / X</span><span class="ctrl-action">Botões A / B</span></div>
+      <div class="ctrl-item"><span class="ctrl-key">A / S</span><span class="ctrl-action">Botões X / Y</span></div>
+      <div class="ctrl-item"><span class="ctrl-key">Q / W</span><span class="ctrl-action">Gatilhos L / R</span></div>
+      <div class="ctrl-item"><span class="ctrl-key">ENTER</span><span class="ctrl-action">Start</span></div>
+      <div class="ctrl-item"><span class="ctrl-key">SHIFT</span><span class="ctrl-action">Select</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🎮 SNES RETRO PLAY</div>
+  <p>Feito com <span class="heart">♥</span> para os fãs de retrogaming &nbsp;|&nbsp; © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
